@@ -25,6 +25,7 @@ public class MapGenerator {
                 if(map[i][j] > 0){
                     g.setColor(Color.black);
                     g.fillRect(j*brickWidth + 80, i*brickHeight + 50, brickWidth, brickHeight);
+                
                 }
             }
         }
