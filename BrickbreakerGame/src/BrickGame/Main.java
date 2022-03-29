@@ -10,9 +10,10 @@ public class Main {
         obj.setTitle("Brick Breaker");
 
         obj.setResizable(false);
+        obj.add(gamePlay);
         obj.setVisible(true);
         obj.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        obj.add(gamePlay);
+
 
 
 
