@@ -69,6 +69,20 @@ public class Game {
                     break;
                 }
         }
+        //Left
+        for(int i = columnNumber; i >= 0; i--){
+            if(board[rowNumber][i] == null){
+                break;
+            }
+            if(board[rowNumber][i].getPlayer() == turnPlayer){
+                count++;
+                if(count == 4){
+                    return true;
+                }
+            }else {
+                break;
+            }
+        }
 
         count = 0;
         //Checking for four in a row downwards
@@ -86,21 +100,7 @@ public class Game {
                 }
         }
 
-        count = 0;
-        //Left
-        for(int i = columnNumber; i >= 0; i--){
-            if(board[rowNumber][i] == null){
-                break;
-            }
-            if(board[rowNumber][i].getPlayer() == turnPlayer){
-                count++;
-                if(count == 4){
-                    return true;
-                }
-            }else {
-                break;
-            }
-        }
+
         count = 0;
         //Checking for DownRight
         for (int i = rowNumber, j = columnNumber; i < numberOfRows && j < numberOfColumns; i++, j++){
@@ -116,6 +116,20 @@ public class Game {
                     break;
                 }
 
+        }
+        //Checking for Upwards Right
+        for(int i = rowNumber, j = columnNumber; i >= 0 && j < numberOfColumns; i--, j++){
+            if(board[i][j] == null){
+                break;
+            }
+            if(board[i][j].getPlayer() == turnPlayer){
+                count++;
+                if(count == 4){
+                    return true;
+                }
+            }else {
+                break;
+            }
         }
         count = 0;
         //Checking DownLeft
@@ -133,22 +147,7 @@ public class Game {
             }
 
         }
-        count = 0;
-        //Checking for Upwards Right
-        for(int i = rowNumber, j = columnNumber; i >= 0 && j < numberOfColumns; i--, j++){
-            if(board[i][j] == null){
-                break;
-            }
-            if(board[i][j].getPlayer() == turnPlayer){
-                count++;
-                if(count == 4){
-                    return true;
-                }
-            }else {
-                break;
-            }
-        }
-        count = 0;
+
         //Checking for Upwards Left
         for(int i = rowNumber, j = columnNumber; i>= 0 && j >=0; i--, j--){
             if(board[i][j] == null){
