@@ -23,7 +23,7 @@ public class Game {
     public Disc[][] getBoard() {
         return board;
     }
-
+    //Checks the whole board if there's no null value then game has ended
     public boolean checkIfGameEnded(){
         for (int i = 0; i < numberOfColumns; i++  ){
             if (board[0][i] == null) {
